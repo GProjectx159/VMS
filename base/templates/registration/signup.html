@@ -8,15 +8,16 @@
       <section class="sign">
           <form class="register pt-4" style="direction: rtl;" method="POST">
             {% csrf_token %}
-              <div class="reg-2 m-auto pt-4 pb-5 pl-2 pr-2 container">
+              <div class="reg-2 m-auto pt-4 pb-3 pl-2 pr-2 container">
                 <h2 class="p-4 pt-1 text-center">إنشاء حساب</h2>
 
-                <div class="inputdiv mb-4 d-inline-block">
+                <div class="inputdiv mb-4 d-inline-block" style="width: 44%; margin-left: 5%;">
                   <label for="name">الاسم رباعي:</label>
                   <br>
                   <input type="text" class="input_sign" name="name"  id="name" placeholder="يرجى كتابة الاسم رباعي" value="{{ form.name.value|default_if_none:'' }}" required>
                 </div>
-                <div class="inputdiv mb-4 d-inline-block">
+                
+                <div class="inputdiv mb-4 d-inline-block" style="width: 50%">
                   <label for="username">اسم المستخدم:</label>
                   <br>
                   <input type="text" class="input_sign" name="username"  id="username" placeholder="اسم المستخدم" value="{{ form.username.value|default_if_none:'' }}" required>
@@ -56,18 +57,17 @@
                         {% endfor %}
                     {% endif %}
                 </div>
-                <div class="inputdiv mb-4 d-inline-block">
+                <div class="inputdiv mb-4 d-inline-block" >
                   <label for="employee_identity">الرقم القومي:</label>
                   <br>
                   <input class="input_sign" type="text" name="employee_identity"  id="employee_identity" placeholder="يرجى ادخال الرقم القومي الخاص بك" value="{{ form.employee_identity.value|default_if_none:'' }}" required>
-                  
                 </div>
-                <div class="inputdiv mb-4 d-inline-block" >
+                <div class="inputdiv mb-4 d-inline-block" style="width: 44%; margin-left: 5%;" >
                   <label for="startwork_date">تاريخ التعيين:</label>
                   <br>
                   <input type="date" required id="startwork_date" class="input_sign" placeholder="يرجى ادخال تاريخ التعيين" value="{{ form.startwork_date.value|default_if_none:'' }}" name="startwork_date">
                 </div>
-                <div class="inputdiv mb-4 d-inline-block">
+                <div class="inputdiv mb-4 d-inline-block" style="width: 50%">
                   <label for="phone">رقم الهاتف:</label>
                   <br>
                   <input type="text" required id="phone" class="input_sign" placeholder="يرجى ادخال رقم الهاتف" value="{{ form.phone.value|default_if_none:'' }}" name="phone">
