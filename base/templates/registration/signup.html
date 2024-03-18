@@ -61,7 +61,7 @@
                 <div class="inputdiv mb-4 d-inline-block" >
                   <label for="employee_identity">الرقم القومي:</label>
                   <br>
-                  <input class="input_sign" type="text" name="employee_identity"  id="employee_identity" placeholder="يرجى ادخال الرقم القومي الخاص بك" value="{{ form.employee_identity.value|default_if_none:'' }}" required>
+                  <input class="input_sign" type="text" name="employee_identity"  id="employee_identity" placeholder="يرجى ادخال الرقم القومي الخاص بك" value="{{ form.employee_identity.value|default_if_none:'' }}" min="14" max="14" required>
                 </div>
                 <div class="inputdiv mb-4 d-inline-block" style="width: 44%; margin-left: 5%;" >
                   <label for="startwork_date">تاريخ التعيين:</label>
@@ -71,7 +71,7 @@
                 <div class="inputdiv mb-4 d-inline-block" style="width: 50%">
                   <label for="phone">رقم الهاتف:</label>
                   <br>
-                  <input type="text" required id="phone" class="input_sign" placeholder="يرجى ادخال رقم الهاتف" value="{{ form.phone.value|default_if_none:'' }}" name="phone">
+                  <input type="text" required id="phone" class="input_sign" placeholder="يرجى ادخال رقم الهاتف" value="{{ form.phone.value|default_if_none:'' }}" min="11" max="11" name="phone">
                 </div>
                 
                 <div class="dt-list d-inline-block" style="width: 44%; margin-left: 5%;">

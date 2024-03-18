@@ -6,14 +6,19 @@ from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login as auth_login
 from .models import User
 
-@login_required(login_url='base:login')
+
 def home(request):
  return render(request, "home.html", {})
+
+@login_required(login_url='base:login')
+def home_after(request):
+ return render(request, "home_after.html", {})
+
 
 def loginUser(request):
     form = None
     if request.user.is_authenticated:
-        return redirect('base:home')
+        return redirect('base:home_after')
 
     error_message = None
 
@@ -31,7 +36,7 @@ def loginUser(request):
 
             if user is not None:
                 auth_login(request, user)
-                return redirect('base:home')
+                return redirect('base:home_after')
             else:
                 error_message = 'اسم المستخدم او كلمة المرور خطأ'
                 submitted_data = request.POST.copy() 
