@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm , PasswordResetForm
 from django.contrib.auth.decorators import login_required
 from .forms import MyUserCreationForm
 from django.contrib.auth import logout
@@ -84,3 +84,4 @@ def sginup(request):
 def logoutUser(request):
     logout(request)
     return redirect("base:login")
+

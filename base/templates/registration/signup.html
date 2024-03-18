@@ -21,12 +21,13 @@
                   <label for="username">اسم المستخدم:</label>
                   <br>
                   <input type="text" class="input_sign" name="username"  id="username" placeholder="اسم المستخدم" value="{{ form.username.value|default_if_none:'' }}" required>
-                    {% if error_messages and 'username' in error_messages %}
-                        {% for error in error_messages.username %}
-                            <p style="color: #BF3131;">{{ error }}</p>
-                        {% endfor %}
-                    {% endif %}
+                    
                 </div>
+                {% if error_messages and 'username' in error_messages %}
+                    {% for error in error_messages.username %}
+                        <p style="color: #BF3131;">{{ error }}</p>
+                    {% endfor %}
+                {% endif %}
                 <div class="inputdiv mb-4 d-inline-block">
                  <label for="email">البريدالالكتروني:</label>
                  <br>
@@ -98,7 +99,7 @@
                         {% for error in error_messages.department %}
                             <p style="color: #BF3131;">{{ error }}</p>
                         {% endfor %}
-                    {% endif %}
+                {% endif %}
               <br>
               <input type="submit" value="إنشاء حساب" class="login d-block btn m-auto ">
               <a href="{% url "base:login" %}" class="d-block btn m-auto">هل تمتلك حساب؟</a>
