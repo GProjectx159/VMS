@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<body>
-    <img src="{% static "image/home.jpg" %}" alt="background" class="bg-imgg">
+
+<body style="overflow: hidden;">
+    <img src="{% static "image/home.jpg" %}" alt="background" class="bg-imgg" style="overflow: hidden;">
       <nav class="navbar navbar-expand-lg sticky-top navbar-dark">
           <div class="container">
             <a class="navbar-brand" href="#">
@@ -15,13 +16,6 @@
               <ul class="navbar-nav ms-auto">
                 <li class="nav-item p-2 p-lg-2.8">
                   <a class="nav-link active " href="#">الرئيسية</a>
-                </li>
-                <li class="nav-item dropdown p-2 p-lg-2.8">
-                  <a class="nav-link " role="button"  href="#">الخدمات</a>
-                  
-                </li>
-                <li class="nav-item p-2 p-lg-2.8">
-                  <a class="nav-link" href="#">استعلامات</a>
                 </li>
               
                 
@@ -36,8 +30,8 @@
         <h3 class="pt-4">يساعدك هذا الموقع على طلب اجازة ومعرفة عدد الاجازات المتبقية والعديد من الخدمات الاخرى</h3>
         <h3 class="pt-2">سجل الدخول الان الى موقعنا للحصول على جميع الخدمات المتاحة</h3>
         <div class="bts text-center pt-5">
-        <a href="{% url "base:login" %}" class="btn sign-btn m-1">تسجيل الدخول</a>
-        <a href="{% url "base:sginup" %}" class="btn more-btn m-1">إنشاء حساب</a>
+        <a href="{% url "login" %}" class="btn sign-btn m-1">تسجيل الدخول</a>
+        <a href="{% url "sginup" %}" class="btn more-btn m-1">إنشاء حساب</a>
       </div>
       </div>
       </section>

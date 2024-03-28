@@ -15,26 +15,31 @@
                   <label for="name">الاسم رباعي:</label>
                   <br>
                   <input type="text" class="input_sign" name="name"  id="name" placeholder="يرجى كتابة الاسم رباعي" value="{{ form.name.value|default_if_none:'' }}" required>
+                    {% if error_messages and 'username' in error_messages %}
+                        {% for error in error_messages.username %}
+                            <p style="color: transparent; margin: 0px;">000</p>
+                        {% endfor %}
+                    {% endif %}
                 </div>
                 
                 <div class="inputdiv mb-4 d-inline-block" style="width: 50%">
                   <label for="username">اسم المستخدم:</label>
                   <br>
                   <input type="text" class="input_sign" name="username"  id="username" placeholder="اسم المستخدم" value="{{ form.username.value|default_if_none:'' }}" required>
-                    
+                    {% if error_messages and 'username' in error_messages %}
+                        {% for error in error_messages.username %}
+                            <p style="color: #BF3131; margin: 0px;">{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
                 </div>
-                {% if error_messages and 'username' in error_messages %}
-                    {% for error in error_messages.username %}
-                        <p style="color: #BF3131;">{{ error }}</p>
-                    {% endfor %}
-                {% endif %}
+                
                 <div class="inputdiv mb-4 d-inline-block">
                  <label for="email">البريدالالكتروني:</label>
                  <br>
                   <input type="email" class="input_sign" name="email"  id="email" placeholder=" يرجى ادخال البريد الالكتروني الخاص بك" value="{{ form.email.value|default_if_none:'' }}" required>
                     {% if error_messages and 'email' in error_messages %}
                         {% for error in error_messages.email %}
-                            <p style="color: #BF3131;">{{ error }}</p>
+                            <p style="color: #BF3131; margin: 0px;">{{ error }}</p>
                         {% endfor %}
                     {% endif %}
                 </div>
@@ -44,7 +49,7 @@
                   <input type="password" name="password1" id="password1" class="input_sign" placeholder="كلمة المرور" value="{{ form.password1.value|default_if_none:'' }}" maxlength="18" minlength="6">
                     {% if error_messages and 'password1' in error_messages %}
                         {% for error in error_messages.password1 %}
-                            <p style="color: #BF3131;">{{ error }}</p>
+                            <p style="color: #BF3131; margin: 0px;">{{ error }}</p>
                         {% endfor %}
                     {% endif %}
                 </div>
@@ -54,7 +59,7 @@
                   <input type="password" name="password2" id="password2" class="input_sign" placeholder="تاكيد كلمة المرور" value="{{ form.password2.value|default_if_none:'' }}" maxlength="18" minlength="6">
                     {% if error_messages and 'password2' in error_messages %}
                         {% for error in error_messages.password2 %}
-                            <p style="color: #BF3131;">{{ error }}</p>
+                            <p style="color: #BF3131; margin: 0px;">{{ error }}</p>
                         {% endfor %}
                     {% endif %}
                 </div>
@@ -90,19 +95,20 @@
                   <label for="section-manage">القسم</label>
                   <br>
                   <div class="selectdiv">
-                    <select  name="department" id="department" class="select-dropdown">
+                    <select style="margin: 0px;" name="department" id="department" class="select-dropdown">
                         
                     </select>
+                    {% if error_messages and 'department' in error_messages %}
+                        {% for error in error_messages.department %}
+                            <p style="color: #BF3131; margin-bottom: 25px;">{{ error }}</p>
+                        {% endfor %}
+                    {% endif %}
                   </div>
                 </div>
-                {% if error_messages and 'department' in error_messages %}
-                        {% for error in error_messages.department %}
-                            <p style="color: #BF3131;">{{ error }}</p>
-                        {% endfor %}
-                {% endif %}
+                
               <br>
               <input type="submit" value="إنشاء حساب" class="login d-block btn m-auto ">
-              <a href="{% url "base:login" %}" class="d-block btn m-auto">هل تمتلك حساب؟</a>
+              <a href="{% url "login" %}" class="d-block btn m-auto">هل تمتلك حساب؟</a>
           </div>
               
 

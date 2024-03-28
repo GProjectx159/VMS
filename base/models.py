@@ -11,11 +11,15 @@ class Department(models.Model):
 
 class User(AbstractUser):
     active = models.BooleanField(default=False)
-    employee_identity = models.BigIntegerField(default=0)
+    employee_identity = models.BigIntegerField(unique=True,default=0)
     name = models.CharField(max_length=100, default='', blank=True, null=True)
+    email = models.EmailField(unique=True, null=True)
     phone = models.CharField(max_length=50, blank=True, null=True)
     startwork_date = models.DateField(blank=True, null=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, null=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.name if self.name else "No name"

@@ -5,7 +5,7 @@
 body {
     direction: rtl;
     height: 738px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     font-family: "IBM Plex Sans Arabic"
 }

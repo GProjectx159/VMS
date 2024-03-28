@@ -18,12 +18,12 @@
           <div class="inputdiv mb-3 d-inline-block">
             <label for="n-p">اسم المستخدم:</label>
             <br>
-            <input type="text" name="username" id="username" class="input_sign" placeholder="اسم المستخدم" value="{{ form.username.value|default_if_none:'' }}" required>
+            <input type="email" name="email" id="email" class="input_sign" placeholder="email@example.com" value="{{ form.email.value|default_if_none:'' }}" required>
           </div>
           <div class="inputdiv mb-3 d-inline-block">
             <label for="n-p">كلمةالمرور:</label>
             <br>
-            <input type="password" name="password" id="password" class="input_sign" placeholder="كلمة المرور" value="{{ form.password.value|default_if_none:'' }}" maxlength="18" minlength="6" required>
+            <input type="password" name="password" id="password" class="input_sign" placeholder="••••••••" value="{{ form.password.value|default_if_none:'' }}" maxlength="18" minlength="6" required>
           </div>
           <br>
           <div class="r-me pb-3 text-center" style="display: flex; align-content: space-between;">
@@ -31,10 +31,10 @@
               <input type="checkbox" id="remember">
               <label for="remember">تذكرني</label>
             </div> -->
-            <a  href="{% url "base:sginup" %}" class="d-inline-block btn" style="margin: auto auto auto 0;">نسيت كلمة المرور</a>
+            <a  href="{% url "reset_password" %}" class="d-inline-block btn" style="margin: auto auto auto 0; ">نسيت كلمة المرور؟</a>
           </div>
           <input type="submit" value="تسجيل دخول" class="login d-block btn m-auto ">
-          <a href="{% url "base:sginup" %}" class="d-block btn m-auto"> لا تملك حسابا حتى الآن؟</a>
+          <a href="{% url "sginup" %}" class="d-block btn m-auto"> لا تملك حسابا حتى الآن؟</a>
       </form>
   </section>
 </body>
